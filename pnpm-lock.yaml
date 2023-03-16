@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   '@commitlint/cli': 16.3.0
   '@commitlint/config-conventional': 16.2.4
-  '@ebay/nice-modal-react': 1.2.8
+  '@ebay/nice-modal-react': 1.2.9
   '@fortawesome/fontawesome-free': 6.2.0
   '@rjsf/bootstrap-5': https://github.com/nurikk/fileshare/blob/main/rjsf-bootstrap-5-4.2.0.tgz?raw=true
   '@rjsf/core': 4.2.3
@@ -82,7 +82,7 @@ specifiers:
 devDependencies:
   '@commitlint/cli': 16.3.0
   '@commitlint/config-conventional': 16.2.4
-  '@ebay/nice-modal-react': 1.2.8_sfoxds7t5ydpegc3knd667wn6m
+  '@ebay/nice-modal-react': 1.2.9_sfoxds7t5ydpegc3knd667wn6m
   '@fortawesome/fontawesome-free': 6.2.0
   '@rjsf/bootstrap-5': '@github.com/nurikk/fileshare/blob/main/rjsf-bootstrap-5-4.2.0.tgz?raw=true_tu7gqgg7rmwmbhns3tayxqxfsy'
   '@rjsf/core': 4.2.3_react@17.0.2
@@ -534,7 +534,7 @@ packages:
       '@types/node': 17.0.35
       chalk: 4.1.2
       cosmiconfig: 7.0.1
-      cosmiconfig-typescript-loader: 2.0.0_n25z2epmztii6xa2hzhjcem4e4
+      cosmiconfig-typescript-loader: 2.0.0_unjtu23ym3kawulv5yedxslkxm
       lodash: 4.17.21
       resolve-from: 5.0.0
       typescript: 4.8.4
@@ -621,8 +621,8 @@ packages:
       '@cspotcode/source-map-consumer': 0.8.0
     dev: true
 
-  /@ebay/nice-modal-react/1.2.8_sfoxds7t5ydpegc3knd667wn6m:
-    resolution: {integrity: sha512-5C+9/zWsaYeDMI3HLVIg2clQzVmhepxOGeVdAWOyww2GZJ4Cl3NgzPHyO70SIkG0a4aXvUruyDnPM+jx7DzSJg==}
+  /@ebay/nice-modal-react/1.2.9_sfoxds7t5ydpegc3knd667wn6m:
+    resolution: {integrity: sha512-IxTE4jEMx7curG7WOv8qiYEfAY/NJXXX/94MH4imOvefea4vOlWdV+B7Xj5CMgpUowybsKe9T0F0Dqp5fj0gng==}
     peerDependencies:
       react: '>16.8.0'
       react-dom: '>16.8.0'
@@ -1774,11 +1774,12 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
-  /cosmiconfig-typescript-loader/2.0.0_n25z2epmztii6xa2hzhjcem4e4:
+  /cosmiconfig-typescript-loader/2.0.0_unjtu23ym3kawulv5yedxslkxm:
     resolution: {integrity: sha512-2NlGul/E3vTQEANqPziqkA01vfiuUU8vT0jZAuUIjEW8u3eCcnCQWLggapCjhbF76s7KQF0fM0kXSKmzaDaG1g==}
     engines: {node: '>=12', npm: '>=6'}
     peerDependencies:
       '@types/node': '*'
+      cosmiconfig: '>=7'
       typescript: '>=3'
     dependencies:
       '@types/node': 17.0.35
