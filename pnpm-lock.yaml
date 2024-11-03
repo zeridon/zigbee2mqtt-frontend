@@ -58,7 +58,7 @@ importers:
         version: 3.0.3
       '@types/file-saver':
         specifier: ~2.0.5
-        version: 2.0.5
+        version: 2.0.7
       '@types/json-schema':
         specifier: ~7.0.13
         version: 7.0.13
@@ -1093,8 +1093,8 @@ packages:
   '@types/events@3.0.3':
     resolution: {integrity: sha512-trOc4AAUThEz9hapPtSd7wf5tiQKvTtu5b371UxXdTuqzIh0ArcRspRP0i0Viu+LXstIQ1z96t1nsPxT9ol01g==}
 
-  '@types/file-saver@2.0.5':
-    resolution: {integrity: sha512-zv9kNf3keYegP5oThGLaPk8E081DFDuwfqjtiTzm6PoxChdJ1raSuADf2YGCVIyrSynLrgc8JWv296s7Q7pQSQ==}
+  '@types/file-saver@2.0.7':
+    resolution: {integrity: sha512-dNKVfHd/jk0SkR/exKGj2ggkB45MAkzvWCaqLUUgkyjITkGNzH8H+yUwr+BLJUBjZOe9w8X3wgmXhZDRg1ED6A==}
 
   '@types/history@4.7.11':
     resolution: {integrity: sha512-qjDJRrmvBMiTx+jyLxvLfJU7UznFuokDv4f3WRuriHKERccVpFU+8XMQUAbDzoiJCsmexxRExQeMwwCdamSKDA==}
@@ -4799,7 +4799,7 @@ snapshots:
 
   '@types/events@3.0.3': {}
 
-  '@types/file-saver@2.0.5': {}
+  '@types/file-saver@2.0.7': {}
 
   '@types/history@4.7.11': {}
 
