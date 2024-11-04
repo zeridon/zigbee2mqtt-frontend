@@ -1,3 +1,26 @@
+## [0.7.5](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.7.4...0.7.5) (2024-11-04)
+
+
+### Bug Fixes
+
+* **en:** update en.json ([#2087](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2087)) ([b69bbaf](https://github.com/nurikk/zigbee2mqtt-frontend/commit/b69bbaf7bdaa1fbb219b47185294843ce9ef1178))
+* **errorReporting:** fix initial state download button ([2440a1e](https://github.com/nurikk/zigbee2mqtt-frontend/commit/2440a1ebe081e31d777e2ab428fad40abb18af19))
+* **groups:** do not indent groups with one element inside ([#1958](https://github.com/nurikk/zigbee2mqtt-frontend/issues/1958)) ([999c42e](https://github.com/nurikk/zigbee2mqtt-frontend/commit/999c42e241ff2e497b57f370968caa3201f140da))
+* match 2.0.0 permit join API ([#2158](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2158)) ([6e31bc2](https://github.com/nurikk/zigbee2mqtt-frontend/commit/6e31bc2eaadb3b0ad67c88dfd0e0933c57fb947e))
+* **vendor:** update vendor-links.tsx ([#2169](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2169)) ([113e1ef](https://github.com/nurikk/zigbee2mqtt-frontend/commit/113e1ef65c2a13d9088fb1a0cdb1f160884d1c82))
+
+
+### Features
+
+* **ui:** display exact timestamp in the last seen device list field ([#2153](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2153)) ([772428c](https://github.com/nurikk/zigbee2mqtt-frontend/commit/772428cd035cbd021dc553e06e2c8ac6743d0edb))
+
+
+### Reverts
+
+* Revert "fix: match 2.0.0 permit join API (#2158)" (#2159) ([0a1c912](https://github.com/nurikk/zigbee2mqtt-frontend/commit/0a1c912b1ce66ef075c4829a218db20f4a06a41d)), closes [#2158](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2158) [#2159](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2159)
+
+
+
 ## [0.7.4](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.7.3...0.7.4) (2024-07-26)
 
 
