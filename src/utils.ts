@@ -129,9 +129,8 @@ export const download = async (data: Record<string, unknown>, filename: string) 
     const {default: JSZip} = await import('jszip');
     const zip = new JSZip();
     zip.file(filename, JSON.stringify(data, null, 4), { compression: 'DEFLATE' });
-    zip.generateAsync({ type: "blob" }).then((content) => {
-        saveAs(content, `${filename}.zip`);
-    });
+    const content = await zip.generateAsync({ type: "blob" });
+    saveAs(content, `${filename}.zip`);
 }
 
 export const computeSettingsDiff = (before: object, after: object) => {
