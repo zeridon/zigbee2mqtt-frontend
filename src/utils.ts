@@ -126,7 +126,7 @@ export const scale = (inputY: number, yRange: Array<number>, xRange: Array<numbe
 
 
 export const download = async (data: Record<string, unknown>, filename: string) => {
-    const JSZip = await require('jszip');
+    const {default: JSZip} = await import('jszip');
     const zip = new JSZip();
     zip.file(filename, JSON.stringify(data, null, 4), { compression: 'DEFLATE' });
     zip.generateAsync({ type: "blob" }).then((content) => {
