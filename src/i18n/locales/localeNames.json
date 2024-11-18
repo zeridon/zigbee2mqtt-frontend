@@ -1,4 +1,4 @@
-{    
+{
     "de": "Deutsch",
     "en": "English",
     "es": "Español",
@@ -20,5 +20,6 @@
     "no": "Norsk",
     "da": "Dansk",
     "bg": "Български",
-    "hu": "Magyar"
+    "hu": "Magyar",
+    "eu": "Euskera"
 }
