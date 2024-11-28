@@ -97,7 +97,7 @@ class SettingsPage extends Component<
     state = {
         keyName: ROOT_KEY_NAME,
     };
-    settingsFormData: {[s: string]: Record<string, unknown>} = {};
+    settingsFormData: { [s: string]: Record<string, unknown> } = {};
     renderCategoriesTabs(): JSX.Element {
         const { t } = this.props;
         return (
@@ -394,7 +394,7 @@ class SettingsPage extends Component<
                             idPrefix={keyName}
                             schema={currentSchema}
                             formData={this.settingsFormData[keyName]}
-                            onChange={(data) => this.settingsFormData[keyName] = data.formData}
+                            onChange={(data) => (this.settingsFormData[keyName] = data.formData)}
                             onSubmit={this.onSettingsSave}
                             uiSchema={uiSchemas[keyName] as UiSchema}
                             fields={{ TitleField, DescriptionField }}

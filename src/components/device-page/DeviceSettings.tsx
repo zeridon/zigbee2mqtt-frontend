@@ -67,7 +67,7 @@ export class DeviceSettings extends Component<DeviceSettingsProps, DeviceSetting
                 <Form
                     schema={schema}
                     formData={this.formData}
-                    onChange={(data) => this.formData = data.formData}
+                    onChange={(data) => (this.formData = data.formData)}
                     onSubmit={this.updateConfig}
                     uiSchema={uiSchema}
                     fields={{ TitleField, DescriptionField }}
