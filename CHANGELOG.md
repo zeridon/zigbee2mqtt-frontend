@@ -1,3 +1,17 @@
+## [0.7.6](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.7.5...0.7.6) (2024-11-28)
+
+
+### Bug Fixes
+
+* **settings:** fix changed settings consantly resetting [#2080](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2080) ([9354acf](https://github.com/nurikk/zigbee2mqtt-frontend/commit/9354acf5a42850c704cd9924262f0169f0142d00))
+
+
+### Features
+
+* **lang:** add basque language ([#2241](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2241)) ([bc61337](https://github.com/nurikk/zigbee2mqtt-frontend/commit/bc6133714709a9757405c3146c53ca9c0f039fdf))
+
+
+
 ## [0.7.5](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.7.4...0.7.5) (2024-11-04)
 
 
