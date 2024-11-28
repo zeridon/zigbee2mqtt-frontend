@@ -97,6 +97,7 @@ class SettingsPage extends Component<
     state = {
         keyName: ROOT_KEY_NAME,
     };
+    settingsFormData: {[s: string]: Record<string, unknown>} = {};
     renderCategoriesTabs(): JSX.Element {
         const { t } = this.props;
         return (
@@ -380,6 +381,10 @@ class SettingsPage extends Component<
     renderSettings(): JSX.Element {
         const { keyName } = this.state;
         const { currentSchema, currentConfig } = this.getSettingsInfo();
+        // Put formData in separate variable to prevent overwrites on re-render.
+        if (!(keyName in this.settingsFormData)) {
+            this.settingsFormData[keyName] = currentConfig;
+        }
         return (
             <div className="tab">
                 {this.renderSettingsTabs()}
@@ -388,7 +393,8 @@ class SettingsPage extends Component<
                         <Form
                             idPrefix={keyName}
                             schema={currentSchema}
-                            formData={currentConfig}
+                            formData={this.settingsFormData[keyName]}
+                            onChange={(data) => this.settingsFormData[keyName] = data.formData}
                             onSubmit={this.onSettingsSave}
                             uiSchema={uiSchemas[keyName] as UiSchema}
                             fields={{ TitleField, DescriptionField }}

@@ -22,6 +22,7 @@ export class DeviceSettings extends Component<DeviceSettingsProps, DeviceSetting
 
         updatedDeviceConfig: {},
     };
+    formData: KVP | KVP[] | undefined = undefined;
     getGenericDeviceSettingsSchema(): JSONSchema7 {
         const {
             bridgeInfo: { config_schema: configSchema = {} },
@@ -53,6 +54,10 @@ export class DeviceSettings extends Component<DeviceSettingsProps, DeviceSetting
 
     render(): ReactNode {
         const { schema, data, uiSchema } = this.getSchemaAndConfig();
+        // Put formData in separate variable to prevent overwrites on re-render.
+        if (!this.formData) {
+            this.formData = data;
+        }
         return (
             <>
                 <ReadTheDocsInfo
@@ -61,7 +66,8 @@ export class DeviceSettings extends Component<DeviceSettingsProps, DeviceSetting
 
                 <Form
                     schema={schema}
-                    formData={data}
+                    formData={this.formData}
+                    onChange={(data) => this.formData = data.formData}
                     onSubmit={this.updateConfig}
                     uiSchema={uiSchema}
                     fields={{ TitleField, DescriptionField }}
