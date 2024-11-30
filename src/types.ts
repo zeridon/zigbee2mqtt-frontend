@@ -1,29 +1,29 @@
 import { JSONSchema7 } from 'json-schema';
-import {CustomClusters} from './zcl/definition/tstype'
+import { CustomClusters } from './zcl/definition/tstype';
 
-export type DeviceType = "EndDevice" | "Router" | "Coordinator";
+export type DeviceType = 'EndDevice' | 'Router' | 'Coordinator';
 export type FriendlyName = string;
 export type IEEEEAddress = string;
 
 export type OTAState = {
-    state: "available" | "updating";
+    state: 'available' | 'updating';
     progress: number;
     remaining: number;
-}
+};
 export type RGBColor = {
     r: number;
     g: number;
     b: number;
-}
+};
 export type HueSaturationColor = {
     hue: number;
     saturation: number;
-}
+};
 
 export type XYColor = {
     x: number;
     y: number;
-}
+};
 export type AnyColor = RGBColor | XYColor | HueSaturationColor;
 export type DeviceState = Record<string, unknown>;
 export type Cluster = string | number;
@@ -56,8 +56,8 @@ export interface ClusterDefinition {
 }
 
 export interface BridgeDefinitions {
-    clusters: Readonly<Record<Cluster, Readonly<ClusterDefinition>>>,
-    custom_clusters: Readonly<Record<IEEEEAddress, Readonly<CustomClusters>>>,
+    clusters: Readonly<Record<Cluster, Readonly<ClusterDefinition>>>;
+    custom_clusters: Readonly<Record<IEEEEAddress, Readonly<CustomClusters>>>;
 }
 
 export interface Meta {
@@ -85,7 +85,6 @@ export interface AdvancedConfig {
     elapsed: boolean;
     last_seen: 'disable' | 'ISO_8601' | 'ISO_8601_local' | 'epoch';
     legacy_api: boolean;
-
 }
 export interface Z2MConfig {
     homeassistant: boolean;
@@ -94,16 +93,7 @@ export interface Z2MConfig {
     device_options: DeviceConfig;
     [k: string]: unknown;
 }
-export interface BridgeConfig {
-    version: string;
-    commit: string;
-    coordinator: Coordinator;
-    network: Network;
-    log_level: string;
-    permit_join: boolean;
-
-}
-export type BridgeState = "online" | "offline";
+export type BridgeState = 'online' | 'offline';
 export interface BridgeInfo {
     config: Z2MConfig;
     config_schema: JSONSchema7;
@@ -111,8 +101,8 @@ export interface BridgeInfo {
     permit_join_timeout: number;
     commit?: string;
     version?: string;
-    zigbee_herdsman_converters: {version: string},
-    zigbee_herdsman: {version: string},
+    zigbee_herdsman_converters: { version: string };
+    zigbee_herdsman: { version: string };
     coordinator?: {
         meta?: {
             revision?: string;
@@ -124,11 +114,10 @@ export interface BridgeInfo {
     restart_required: boolean;
 }
 
-export type PowerSource = "Battery" | "Mains (single phase)" | "DC Source";
+export type PowerSource = 'Battery' | 'Mains (single phase)' | 'DC Source';
 
-export type GenericFeatureType = "numeric" | "binary" | "enum" | "text" | "list";
-export type CompositeFeatureType = "fan" | "light" | "switch" | "cover" | "lock" | "composite" | "climate";
-
+export type GenericFeatureType = 'numeric' | 'binary' | 'enum' | 'text' | 'list';
+export type CompositeFeatureType = 'fan' | 'light' | 'switch' | 'cover' | 'lock' | 'composite' | 'climate';
 
 export enum FeatureAccessMode {
     NONE,
@@ -140,7 +129,7 @@ export interface GenericExposedFeature {
     type: GenericFeatureType;
     name: string;
     label: string;
-    unit?: "string";
+    unit?: 'string';
     access: FeatureAccessMode;
     endpoint?: Endpoint;
     property?: string;
@@ -148,22 +137,22 @@ export interface GenericExposedFeature {
 }
 
 export interface BinaryFeature extends GenericExposedFeature {
-    type: "binary";
+    type: 'binary';
     value_on: unknown;
     value_off: unknown;
     value_toggle?: unknown;
 }
 
 export interface ListFeature extends GenericExposedFeature {
-    type: "list";
+    type: 'list';
     // bad design decision
-    item_type: "number" | GenericOrCompositeFeature;
+    item_type: 'number' | GenericOrCompositeFeature;
 
     length_min?: number;
     length_max?: number;
 }
 
-export interface CompositeFeature extends Omit<GenericExposedFeature, "type"> {
+export interface CompositeFeature extends Omit<GenericExposedFeature, 'type'> {
     type: CompositeFeatureType;
     features: GenericOrCompositeFeature[];
 }
@@ -176,7 +165,7 @@ export interface NumericFeaturePreset {
     description?: string;
 }
 export interface NumericFeature extends GenericExposedFeature {
-    type: "numeric";
+    type: 'numeric';
     value_min?: number;
     value_max?: number;
     value_step?: number;
@@ -184,47 +173,47 @@ export interface NumericFeature extends GenericExposedFeature {
 }
 
 export interface TextualFeature extends GenericExposedFeature {
-    type: "text";
+    type: 'text';
 }
 
 export interface EnumFeature extends GenericExposedFeature {
-    type: "enum";
+    type: 'enum';
     values: unknown[];
 }
 
 export interface GradientFeature extends GenericExposedFeature {
-    type: "text";
-    name: "gradient";
+    type: 'text';
+    name: 'gradient';
     length_min: number;
     length_max: number;
 }
 
 export interface LightFeature extends CompositeFeature {
-    type: "light";
+    type: 'light';
 }
 
 export interface SwitchFeature extends CompositeFeature {
-    type: "switch";
+    type: 'switch';
 }
 
 export interface CoverFeature extends CompositeFeature {
-    type: "cover";
+    type: 'cover';
 }
 
 export interface LockFeature extends CompositeFeature {
-    type: "lock";
+    type: 'lock';
 }
 export interface FanFeature extends CompositeFeature {
-    type: "fan";
+    type: 'fan';
 }
 
 export interface ClimateFeature extends CompositeFeature {
-    type: "climate";
+    type: 'climate';
 }
 
 export interface ColorFeature extends CompositeFeature {
-    type: "composite";
-    name: "color_xy" | "color_hs";
+    type: 'composite';
+    name: 'color_xy' | 'color_hs';
     features: NumericFeature[];
 }
 
@@ -272,7 +261,7 @@ export type Scene = {
     id: number;
     name?: string;
     endpoint?: Endpoint;
-}
+};
 export interface Group extends WithFriendlyName, WithDescription, WithScenes {
     id: number;
     members: GroupAddress[];
@@ -294,16 +283,15 @@ export interface Device extends WithFriendlyName, WithDescription {
     endpoints: Record<Endpoint, EndpointDescription>;
 }
 
-export type ObjectType = "device" | "group";
+export type ObjectType = 'device' | 'group';
 export interface BindRule {
     cluster: Cluster;
     target: {
         id?: number;
         endpoint?: Endpoint;
         ieee_address?: IEEEEAddress;
-        type: "endpoint" | "group";
+        type: 'endpoint' | 'group';
     };
-
 }
 
 export interface TouchLinkDevice {
@@ -311,25 +299,26 @@ export interface TouchLinkDevice {
     channel: number;
 }
 
-export type LastSeenType = "disable" | "ISO_8601" | "ISO_8601_local" | "epoch";
+export type LastSeenType = 'disable' | 'ISO_8601' | 'ISO_8601_local' | 'epoch';
 
-export type KVP = Record<string, unknown>
+export type KVP = Record<string, unknown>;
 
+export type Prev = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...0[]];
 
-export type Prev = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10,
-    11, 12, 13, 14, 15, 16, 17, 18, 19, 20, ...0[]]
-
-export type Join<K, P> = K extends string | number ?
-    P extends string | number ?
-    `${K}${"" extends P ? "" : "."}${P}`
-    : never : never;
-
-
-export type Paths<T, D extends number = 10> = [D] extends [never] ? never : T extends object ?
-    { [K in keyof T]-?: K extends string | number ?
-        `${K}` | Join<K, Paths<T[K], Prev[D]>>
+export type Join<K, P> = K extends string | number
+    ? P extends string | number
+        ? `${K}${'' extends P ? '' : '.'}${P}`
         : never
-    }[keyof T] : ""
+    : never;
 
-export type Leaves<T, D extends number = 10> = [D] extends [never] ? never : T extends object ?
-    { [K in keyof T]-?: Join<K, Leaves<T[K], Prev[D]>> }[keyof T] : "";
+export type Paths<T, D extends number = 10> = [D] extends [never]
+    ? never
+    : T extends object
+    ? { [K in keyof T]-?: K extends string | number ? `${K}` | Join<K, Paths<T[K], Prev[D]>> : never }[keyof T]
+    : '';
+
+export type Leaves<T, D extends number = 10> = [D] extends [never]
+    ? never
+    : T extends object
+    ? { [K in keyof T]-?: Join<K, Leaves<T[K], Prev[D]>> }[keyof T]
+    : '';

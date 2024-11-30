@@ -1,6 +1,5 @@
 import createStore from 'unistore';
 import {
-    BridgeConfig,
     BridgeInfo,
     BridgeState,
     BridgeDefinitions,
@@ -65,7 +64,6 @@ export interface GlobalState extends WithDevices, WithDeviceStates, WithGroups, 
     touchlinkResetInProgress: boolean;
     networkGraph: GraphI;
     networkGraphIsLoading: boolean;
-    bridgeConfig: BridgeConfig;
     bridgeState: BridgeState;
     bridgeDefinitions: BridgeDefinitions;
     logs: LogMessage[];

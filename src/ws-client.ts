@@ -1,6 +1,6 @@
 import ReconnectingWebSocket from 'reconnecting-websocket';
 import store, { Base64String, Extension, LogMessage, OnlineOrOffline } from './store';
-import { BridgeConfig, BridgeInfo, BridgeState, BridgeDefinitions, Device, DeviceState, Group, TouchLinkDevice } from './types';
+import { BridgeInfo, BridgeState, BridgeDefinitions, Device, DeviceState, Group, TouchLinkDevice } from './types';
 import {
     debounceArgs,
     isSecurePage,
@@ -155,12 +155,6 @@ class Api {
 
     private processBridgeMessage = (data: Message): void => {
         switch (data.topic) {
-            case "bridge/config":
-                store.setState({
-                    bridgeConfig: data.payload as unknown as BridgeConfig
-                });
-                break;
-
             case "bridge/info":
                 store.setState({
                     bridgeInfo: data.payload as unknown as BridgeInfo
