@@ -1,3 +1,13 @@
+# [0.8.0](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.7.7...0.8.0) (2024-12-01)
+
+
+### Bug Fixes
+
+* **config:** remove deprecated `bridge/config` ([121f835](https://github.com/nurikk/zigbee2mqtt-frontend/commit/121f8359eaf205a1c0afb059528cb09833c42809))
+* match API change for z2m PR 24432 ([#2165](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2165)) ([ab18490](https://github.com/nurikk/zigbee2mqtt-frontend/commit/ab184905942a1ebc6ed63e77ec010d5dd188da01))
+
+
+
 ## [0.7.7](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.7.6...0.7.7) (2024-11-28)
 
 
