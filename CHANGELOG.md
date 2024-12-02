@@ -1,3 +1,12 @@
+## [0.8.1](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.8.0...0.8.1) (2024-12-02)
+
+
+### Bug Fixes
+
+* match 2.0.0 permit join API ([#2158](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2158)) ([e6679e9](https://github.com/nurikk/zigbee2mqtt-frontend/commit/e6679e9635c8f7ef886d4ff1c26923606ed4c4b2))
+
+
+
 # [0.8.0](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.7.7...0.8.0) (2024-12-01)
 
 
