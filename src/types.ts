@@ -97,7 +97,8 @@ export type BridgeState = 'online' | 'offline';
 export interface BridgeInfo {
     config: Z2MConfig;
     config_schema: JSONSchema7;
-    permit_join_timeout: number;
+    permit_join: boolean;
+    permit_join_end: number | undefined;
     commit?: string;
     version?: string;
     zigbee_herdsman_converters: { version: string };

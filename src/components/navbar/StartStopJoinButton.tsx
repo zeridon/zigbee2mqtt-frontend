@@ -1,4 +1,4 @@
-import React, { RefObject, useState } from 'react';
+import React, { RefObject, useState, useEffect } from 'react';
 import Button from '../button';
 import cx from 'classnames';
 import useComponentVisible from '../../hooks/useComponentVisible';
@@ -14,8 +14,8 @@ export function StartStopJoinButton({ devices, setPermitJoin, bridgeInfo }: Star
     const { t } = useTranslation(['navbar']);
     const { ref, isComponentVisible, setIsComponentVisible } = useComponentVisible(false);
     const [selectedRouter, setSelectedRouter] = useState<Device>({} as Device);
-    const { permit_join_timeout: permitJoinTimeout } = bridgeInfo;
-    const permitJoin = permitJoinTimeout > 0;
+    const [permitJoinTimeout, setPermitJoinTimeout] = useState<number | undefined>(undefined);
+    const { permit_join: permitJoin, permit_join_end: permitJoinEnd } = bridgeInfo;
 
     const selectAndHide = (device: Device) => {
         setSelectedRouter(device);
@@ -39,6 +39,21 @@ export function StartStopJoinButton({ devices, setPermitJoin, bridgeInfo }: Star
     const onBtnClick = () => {
         setPermitJoin(permitJoin ? 0 : 254, selectedRouter);
     };
+    const updatePermitJoinTimeout = () => {
+        setPermitJoinTimeout(permitJoinEnd ? Math.round((permitJoinEnd - Date.now()) / 1000) : undefined);
+    };
+
+    useEffect(() => {
+        let interval;
+        updatePermitJoinTimeout();
+
+        if (permitJoinEnd) {
+            interval = setInterval(() => updatePermitJoinTimeout(), 1000);
+        }
+
+        return () => clearInterval(interval);
+    }, [permitJoinEnd]);
+
     const permitJoinTimer = (
         <>
             {permitJoinTimeout ? (
