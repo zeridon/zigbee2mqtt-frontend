@@ -1,3 +1,13 @@
+# [0.9.0](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.8.1...0.9.0) (2024-12-08)
+
+
+### Bug Fixes
+
+* consistent rep interval capitalisation ([#2273](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2273)) ([ed5a73b](https://github.com/nurikk/zigbee2mqtt-frontend/commit/ed5a73b65a2170f6a7c6d420285252b265c20343))
+* **permit_join:** update to new permit join API ([7ca8026](https://github.com/nurikk/zigbee2mqtt-frontend/commit/7ca8026436fff5029a2eff8e9c76b2e3969608ee))
+
+
+
 ## [0.8.1](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.8.0...0.8.1) (2024-12-02)
 
 
