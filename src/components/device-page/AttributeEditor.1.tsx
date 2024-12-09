@@ -114,66 +114,71 @@ export class AttributeEditor extends React.Component<AttributeEditorProps, Attri
         const endpoints = getEndpoints(device);
         const logsFilterFn = (l: LogMessage) =>
             logStartingStrings.some((startString) => l.message.startsWith(startString));
-        return (
-            <>
-                <div className="mb-3 row">
-                    <div className="col-6 col-sm-3">
-                        <EndpointPicker
-                            data-testid="endpoint-picker"
-                            label={t('zigbee:endpoint')}
-                            values={endpoints}
-                            value={endpoint as Endpoint}
-                            onChange={this.onEndpointChange}
-                        />
-                    </div>
-                    <div className="col-6 col-sm-3">
-                        <ClusterPicker
-                            data-testid="cluster-picker"
-                            label={t('cluster')}
-                            pickerType={PickerType.SINGLE}
-                            clusters={device.endpoints[endpoint].clusters.input}
-                            value={cluster}
-                            onChange={this.onClusterChange}
-                        />
-                    </div>
 
-                    <div className="col-6 col-sm-3">
-                        <AttributePicker
-                            data-testid="attribute-picker"
-                            label={t('attribute')}
-                            value={''}
-                            cluster={cluster}
-                            device={device}
-                            clusters={clusters}
-                            onChange={this.onAttributeSelect}
-                        />
+        if (!endpoint) {
+            return <>No endpoints</>;
+        } else {
+            return (
+                <>
+                    <div className="mb-3 row">
+                        <div className="col-6 col-sm-3">
+                            <EndpointPicker
+                                data-testid="endpoint-picker"
+                                label={t('zigbee:endpoint')}
+                                values={endpoints}
+                                value={endpoint as Endpoint}
+                                onChange={this.onEndpointChange}
+                            />
+                        </div>
+                        <div className="col-6 col-sm-3">
+                            <ClusterPicker
+                                data-testid="cluster-picker"
+                                label={t('cluster')}
+                                pickerType={PickerType.SINGLE}
+                                clusters={device.endpoints[endpoint].clusters.input}
+                                value={cluster}
+                                onChange={this.onClusterChange}
+                            />
+                        </div>
+
+                        <div className="col-6 col-sm-3">
+                            <AttributePicker
+                                data-testid="attribute-picker"
+                                label={t('attribute')}
+                                value={''}
+                                cluster={cluster}
+                                device={device}
+                                clusters={clusters}
+                                onChange={this.onAttributeSelect}
+                            />
+                        </div>
                     </div>
-                </div>
-                <div className="mb-3 row" data-testid="selected-attribute">
-                    {this.renderSelectedAttribute()}
-                </div>
-                <div className="mb-3 row">
-                    <div className="btn-group col col-3" role="group">
-                        <Button<void>
-                            disabled={noAttributesSelected || noSelectedCluster}
-                            className="btn btn-success me-2"
-                            data-testid="read-attribute"
-                            onClick={this.onReadClick}
-                        >
-                            {t('read')}
-                        </Button>
-                        <Button<void>
-                            disabled={noAttributesSelected || noSelectedCluster}
-                            className="btn btn-danger"
-                            data-testid="write-attribute"
-                            onClick={this.onWriteClick}
-                        >
-                            {t('write')}
-                        </Button>
+                    <div className="mb-3 row" data-testid="selected-attribute">
+                        {this.renderSelectedAttribute()}
                     </div>
-                </div>
-                <LastLogResult logs={this.props.logs} filterFn={logsFilterFn} />
-            </>
-        );
+                    <div className="mb-3 row">
+                        <div className="btn-group col col-3" role="group">
+                            <Button<void>
+                                disabled={noAttributesSelected || noSelectedCluster}
+                                className="btn btn-success me-2"
+                                data-testid="read-attribute"
+                                onClick={this.onReadClick}
+                            >
+                                {t('read')}
+                            </Button>
+                            <Button<void>
+                                disabled={noAttributesSelected || noSelectedCluster}
+                                className="btn btn-danger"
+                                data-testid="write-attribute"
+                                onClick={this.onWriteClick}
+                            >
+                                {t('write')}
+                            </Button>
+                        </div>
+                    </div>
+                    <LastLogResult logs={this.props.logs} filterFn={logsFilterFn} />
+                </>
+            );
+        }
     }
 }
