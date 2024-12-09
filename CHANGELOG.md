@@ -1,3 +1,12 @@
+## [0.9.1](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.9.0...0.9.1) (2024-12-09)
+
+
+### Bug Fixes
+
+* **dev-console:** fix `c.endpoints[r] is undefined` crash [#2268](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2268) ([06693f0](https://github.com/nurikk/zigbee2mqtt-frontend/commit/06693f02c48f000e91d6337a8551acbbe4cf3cf7))
+
+
+
 # [0.9.0](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.8.1...0.9.0) (2024-12-08)
 
 
