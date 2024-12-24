@@ -1,3 +1,13 @@
+## [0.9.2](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.9.1...0.9.2) (2024-12-24)
+
+
+### Bug Fixes
+
+* **device_icon:** remove jpg provider ([#2335](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2335)) ([00a7786](https://github.com/nurikk/zigbee2mqtt-frontend/commit/00a778611f0dc36a3556b60a8cf3fbe7434d77b9))
+* **external-extension:** update extensions editor example to 2.0.0 ([#2286](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2286)) ([dc95dd7](https://github.com/nurikk/zigbee2mqtt-frontend/commit/dc95dd72eff19a489f0298ac84ed0ff302d0a4b4))
+
+
+
 ## [0.9.1](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.9.0...0.9.1) (2024-12-09)
 
 
