@@ -1,3 +1,12 @@
+## [0.9.3](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.9.2...0.9.3) (2024-12-28)
+
+
+### Bug Fixes
+
+* **config:** fix HA and availability feature enabled ([#2343](https://github.com/nurikk/zigbee2mqtt-frontend/issues/2343)) ([a20222f](https://github.com/nurikk/zigbee2mqtt-frontend/commit/a20222f089d196789a12fabb32e909a25bf6fb58))
+
+
+
 ## [0.9.2](https://github.com/nurikk/zigbee2mqtt-frontend/compare/0.9.1...0.9.2) (2024-12-24)
 
 
